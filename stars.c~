@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+#define COUNT 5
+
+void main() {
+    int count = COUNT;
+    int i;
+    int j;
+
+    for(i = 5; i > 0; i--) {
+        
+        for(j = 0; j < i; j++)
+                printf("*");
+        printf("\n");
+    }
+}
