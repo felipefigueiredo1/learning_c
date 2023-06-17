@@ -21,21 +21,42 @@ void main(void)
         } else if (state == OUT) {
             state = IN;
             nw++;
-            length++;
+            wordlength[nw] = length++ + 1;
         } else {
-            wordlength[nw] = length++;
+            wordlength[nw] = length++ + 1;
             if(longestwrd < length) longestwrd = wordlength[nw];
         }
-    
+
+    for (int i = 0; i < 64; ++i) {  // "bubble sort"
+        for (int j = i + 1; j < 64; ++j) {
+            if (wordlength[i] < wordlength[j]) {
+                int temp        = wordlength[i];
+                wordlength[i]   = wordlength[j];
+                wordlength[j]   = temp;
+            }
+        }
+    }    
 
     for(i = 0; i < 64; i++) {
         if(wordlength[i] != 0) {
-            for(j = 0; j <= (wordlength[i]); j++) printf("*");
+            for(j = 0; j <= (wordlength[i] - 1); j++) printf("* ");
             
-            printf("\t");
+            printf("\n");
         }
+    }    
+    
+    for(i = longestwrd; i >= 0; i--) {
+        for(j = 0; j < 64; ++j) 
+            if(wordlength[j] > i)
+                printf("* ");
+        printf("\n");   
     }
+    
+    for(i = longestwrd; i >= 0; i--)    
+        if(i !=0)
+            printf("%d ", i);
+
     // TODO: print vertically, tip: start by longestwrd
-    printf("Maior palavra teve %d letras", longestwrd + 1);
+    printf("\nMaior palavra teve %d letras", longestwrd);
 
 }
