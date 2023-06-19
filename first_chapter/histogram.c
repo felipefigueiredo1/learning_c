@@ -27,15 +27,14 @@ void main(void)
             if(longestwrd < length) longestwrd = wordlength[nw];
         }
 
-    for (int i = 0; i < 64; ++i) {  // "bubble sort"
-        for (int j = i + 1; j < 64; ++j) {
+    for (int i = 0; i < 64; ++i)  // "bubble sort"
+        for (int j = i + 1; j < 64; ++j) 
             if (wordlength[i] < wordlength[j]) {
                 int temp        = wordlength[i];
                 wordlength[i]   = wordlength[j];
                 wordlength[j]   = temp;
             }
-        }
-    }    
+        
 
     for(i = 0; i < 64; i++) {
         if(wordlength[i] != 0) {
