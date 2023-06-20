@@ -5,7 +5,7 @@
 #define STEP  20 /* step size */
 /* print Fahrenheit-Celsius table */
 
-void convertToFahr(int fahr);
+float convertToCelsius(int fahr);
 
 void main()
 {
@@ -13,10 +13,10 @@ void main()
 
 	// fahr will jump 20 steps each iteration until came to 300
 	printf("Fahrenheit\tCelsius");
-    convertToFahr(fahr);
+	for(fahr = LOWER;fahr <= UPPER;fahr = fahr + STEP ) 
+	    printf("%3d\t\t %6.1f \n", fahr, convertToCelsius(fahr));
 }   
 
-void convertToFahr(int fahr) {
-    for(fahr = LOWER;fahr <= UPPER;fahr = fahr + STEP ) 
-		printf("%3d\t\t %6.1f \n", fahr, (5.0/9.0)*(fahr-32)); // this shit do a computed convertion of fahr to celsius
+float convertToCelsius(int fahr) {
+	return (5.0/9.0)*(fahr-32);
 }
