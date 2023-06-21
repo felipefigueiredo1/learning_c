@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 struct Person{
 	char sex;
@@ -8,17 +9,19 @@ struct Person{
 
 void main()
 {
+	struct Person person;
 	int i;
-	char name[60]
-	struct Person robert;
-	
-	for(i = 0; i < 'Robert'; i++) {
-			
-	}
+    
+	printf("Enter name: ");
+	scanf("%s", person.name); // arg array => pointer to the first element, dont need &
+	printf("Enter sex: ");
+	scanf(" %c", &person.sex);
+	printf("Enter age: ");
+	scanf(" %d", &person.age);
 
-	robert.sex = 'M';
-	robert.age = 79;
+	printf("Name: %s, Sex: %c\nAge: %d\n", person.name, person.sex, person.age);
 
-	printf("Sex: %c\nAge: %d", robert.sex, robert.age);
-	
+	person.age = 32;
+
+	printf("New age: %d", person.age);	
 }
