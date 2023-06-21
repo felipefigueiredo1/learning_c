@@ -43,6 +43,8 @@ float calc_serie(int x, int n) {
 int main(void){
 	int base, exp;
 	
+	printf("---Digite dois numeros---\n");
+
 	scanf("%d %d", &base, &exp);
 
 	printf("%d\n", pot(base, exp));
@@ -50,6 +52,8 @@ int main(void){
 	printf("%d\n", fat(base));
 	
 	int n, x;
+
+	printf("---Digite dois numeros---\n");
 
 	scanf("%d %d", &x, &n);
 	
