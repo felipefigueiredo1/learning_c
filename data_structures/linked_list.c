@@ -44,7 +44,7 @@ node_t  *insert_at_head(node_t **head, node_t *node_to_insert) {
 }
 
 void insert_after_node(node_t *node_to_insert_after, node_t* newnode) {
-    newnode->next = node_to_insert_after->next; // pega o proximo ponteiro do node que ele vai ser inserido apos
+    newnode->next = node_to_insert_after->next; // pega o proximo ponteiro do node que ele vai ser inserido apos, o ponteiro atual do node que ele quer ser inserido apos
     node_to_insert_after->next = newnode; // o node que ele vai ser inserido apos agora aponta para o node novo
 }
 
