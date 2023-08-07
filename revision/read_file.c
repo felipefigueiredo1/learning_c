@@ -42,6 +42,9 @@ int main(void) {
 
             // Armazena o ponteiro da linha no array de ponteiros para char
             lines[numLines] = line;
+
+            printf("lines lines %c", lines[0][0]);
+
             // cada valor no array lines é um ponteiro para um array de caracteres representado pela variavel line a cada iteração
             numLines++;
     }

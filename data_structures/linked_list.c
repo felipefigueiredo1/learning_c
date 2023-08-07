@@ -38,6 +38,11 @@ node_t  *create_new_node(int value) {
 }
 
 node_t  *insert_at_head(node_t **head, node_t *node_to_insert) {
+    /**
+     * node_to_insert, é um endereço para o novo nó
+     * Ele irá receber no next o endereço para head, na primeira iteração sera NULL
+     * Logo Após o Endereço head irá receber o endereço de node_to_insert
+    */
     node_to_insert->next = *head; // cada iteração vai receber o struct inserido anteriormente em head, head representa apenas o endereço de memoria
     *head = node_to_insert; // entao head receberá o node atual da iteração
     return node_to_insert;
